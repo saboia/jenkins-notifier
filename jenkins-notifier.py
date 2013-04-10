@@ -27,4 +27,4 @@ if __name__ == '__main__':
             p = GrowlPing()
             p.notify(jobs_broken)
         
-        time.sleep(300)
+        time.sleep(settings.REFRESH_JOBS_STATUS)
