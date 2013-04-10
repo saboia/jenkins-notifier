@@ -10,6 +10,8 @@ import sys
 import Growl
 import getopt
 
+import settings
+
 """Growl Ping
 
     -h/--help
@@ -31,7 +33,7 @@ import getopt
 class GrowlPing(object):
 
     def __init__(self):
-        self.icon_path = '/Users/saboia/Projetos/jenkins-notifier/jenkins.png'
+        self.icon_path = '%s/jenkins.png' % settings.PROJECT_ROOT_PATH
         self.app_name = 'Growl Ping'
         self.notifications = ['update']
         self.title = 'Growl Ping Notification'
@@ -76,9 +78,10 @@ class GrowlPing(object):
     def ping(self):
         return
 
-    def notify(self,dias):
-        title = "Jenkins Notifier"
-        message = "Teste para o build %s" % dias
+    def notify(self, jobs_broken):
+        title = "Jenkins Notifier Alert!"
+        message = "Build quebrado!\n%s" % ('\n'.join(jobs_broken))
+        
         notification = 'update'
         g = Growl.GrowlNotifier(self.app_name, self.notifications,
                                 applicationIcon=self.icon)
