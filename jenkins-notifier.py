@@ -17,6 +17,8 @@ if __name__ == '__main__':
         jobs_broken = []
         
         for job_name in jobs_list:
+            if '<disabled>true</disabled>'in je.get_job(job_name).get_config():
+                continue
             
             last_build = get_latest_build(settings.JENKINS_URL, job_name)
             
