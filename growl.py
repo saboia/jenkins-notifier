@@ -80,7 +80,7 @@ class GrowlPing(object):
 
     def notify(self, jobs_broken):
         title = "Jenkins Notifier Alert!"
-        message = "Build quebrado!\n%s" % ('\n'.join(jobs_broken))
+        message = "Build quebrado!\n\n%s" % ('\n'.join(jobs_broken))
         
         notification = 'update'
         g = Growl.GrowlNotifier(self.app_name, self.notifications,
