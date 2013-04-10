@@ -1,0 +1,11 @@
+Install
+=======
+
+First, you need to install Growl-1.2.2f1.dmg. This file is in data folder.
+On a Python enviroment, you need to install growl-py and jenkinsapi.
+Configure settings.py, putting your Jenkins URL.
+
+That's it! 
+
+Now you have to execute jenkins-notifier.py and wait for notifications!
+
