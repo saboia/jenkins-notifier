@@ -1,2 +1,4 @@
 growl-py==0.0.7
 jenkinsapi==0.1.12
+lxml==3.1.1
+httplib2==0.8
